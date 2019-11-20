@@ -112,3 +112,20 @@ void board()
 	cout << "\t\t\t" << "|_____|_____|_____|" << endl << endl;
 }
 
+void introduce()
+{
+	cout << "\t\t Introduction to how to play game Tactictoe" << endl;
+	cout << "\t\t\t" << "    1    2   3" << endl;
+	cout << "\t\t\t" << "   ___ ___ ___" << endl;
+	cout << "\t\t\t" << "1 |___|___|___|" << endl;
+	cout << "\t\t\t" << "2 |___|___|___|" << endl;
+	cout << "\t\t\t" << "3 |___|___|___|" << endl;
+	cout << "\t\t When you want to select the cell to type X, you enter the row before the following column" << endl;
+	cout << "\t\t Ex : Your Turn Fly - O: 12" << endl;
+	cout << "\t\t\t" << "    1    2   3" << endl;
+	cout << "\t\t\t" << "   ___ ___ ___" << endl;
+	cout << "\t\t\t" << "1 |___|_O_|___|" << endl;
+	cout << "\t\t\t" << "2 |___|___|___|" << endl;
+	cout << "\t\t\t" << "3 |___|___|___|" << endl;
+
+}
