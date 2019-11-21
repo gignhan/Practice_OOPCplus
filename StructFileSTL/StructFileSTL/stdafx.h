@@ -16,5 +16,6 @@ using namespace std;
 #include <list> 
 #include <iterator> 
 #include <cstring>
+#include <vector> s
 
 // TODO: reference additional headers your program requires here
