@@ -41,7 +41,7 @@ void addStudent(Student *s)
 		s->ID = st1[i]->ID;
 		if (s1->ID == s->ID)
 		{
-			cout << "Enter again ID :";
+			cout << " <!> ID exists . Enter again ID :";
 			cin >> s1->ID;
 		}
 		else i++;
