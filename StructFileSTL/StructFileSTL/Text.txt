@@ -1,2 +1,4 @@
-1 nhan 4
-2 han 5
+1 nhan 3
+2 han 3
+2 nguyen 1
+2 nhna 3

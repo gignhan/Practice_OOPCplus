@@ -30,23 +30,21 @@ void addStudent(Student *s)
 	Student *s1 = new Student;
 	cout << "Enter ID   :"; cin >> s1->ID;
 	cin.ignore();
-	cout << "Enter name :"; 
+	cout << "Enter name :";
 	getline(cin, s1->name);
 	do {
 		cout << "Enter Score (0 -> 10): "; cin >> s1->score;
 	} while (s1->score < 0 || s1->score>10);
-	if (!st1.empty())
+	//check ID 
+	for (int i = 0; i < st1.size();)
 	{
-		for (int i = 0; i < st1.size(); i++)
+		s->ID = st1[i]->ID;
+		if (s1->ID == s->ID)
 		{
-			s->ID = st1[i]->ID;
-			if (s1->ID == s->ID) 
-			{
-				cout << "Enter ID :";
-				cin >> s1->ID;
-			}
-			else break;
+			cout << "Enter again ID :";
+			cin >> s1->ID;
 		}
+		else i++;
 	}
 	st1.push_back(s1);
 
@@ -80,17 +78,14 @@ void LoadFromFile(string path) {
 	if (f.fail()) 
 		f << " no open file " << endl;
 	else {
+		st1.clear();
 		string y; int x; float z; 
 		while (!f.eof()) {//eof() tra ve true neu ket thuc file
 			Student *s1 = new Student;
 			f >> x; s1->ID = x;
-			//cout << x;
 			f >> y; s1->name = y;
-			//cout << "\t" << y;
 			f >> z; s1->score = z;
-			//cout << "\t\t" << z << endl;
 			st1.push_back(s1);
-			showStudent();
 		}
 		f.close();
 		cout << "Done! " << endl;
