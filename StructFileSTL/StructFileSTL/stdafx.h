@@ -15,5 +15,6 @@ using namespace std;
 #include<fstream>
 #include <list> 
 #include <iterator> 
+#include <cstring>
 
 // TODO: reference additional headers your program requires here

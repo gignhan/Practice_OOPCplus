@@ -2,7 +2,9 @@
 //
 
 #include "stdafx.h"
-list <string> ls;
+
+
+
 struct Student
 {
 	int ID;
@@ -10,17 +12,25 @@ struct Student
 	float score;
 
 };
+void showStudent(struct Student *st)
+{
+	cout << st->ID<<"\t"<<st->name<<"\t"<<st->score;
+}
+void addStudent(struct Student *st)
+{
+	cout << "Enter ID   :"; cin >> st->ID;
+	cout << "Enter name :"; cin >> st->name;
+	cout << "Enter Score: "; cin >> st->score;
+	cout << endl;
+}
 int main()
 {
-	list <string> Student;
+	struct Student st;
+	addStudent(&st);
+	showStudent(&st);
 
-    return 0;
+	
+	system("pause");
+	return 0;
 }
-void addStudent( struct Student st, list <Student> lst)
-{
-	cout << "Enter ID :"; cin >> st.ID;
-	cout << "Enter Name :"; cin >> st.name;
-	cout << "Enter Score :"; cin >> st.score;
-	lst.push_back(st);
 
-}
