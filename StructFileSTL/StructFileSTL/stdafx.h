@@ -9,7 +9,11 @@
 
 #include <stdio.h>
 #include <tchar.h>
-
-
+#include<string>
+#include<iostream>
+using namespace std;
+#include<fstream>
+#include <list> 
+#include <iterator> 
 
 // TODO: reference additional headers your program requires here
