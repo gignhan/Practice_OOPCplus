@@ -27,15 +27,28 @@ bool checkId(Student *s)
 }
 void addStudent(Student *s)
 {
-
-		cout << "Enter ID   :"; cin >> s->ID;
-		cin.ignore();
-		cout << "Enter name :"; 
-		getline(cin, s->name);
-		do {
-			cout << "Enter Score (0 -> 10): "; cin >> s->score;
-		} while (s->score < 0 || s->score>10);
-		st1.push_back(s);
+	Student *s1 = new Student;
+	cout << "Enter ID   :"; cin >> s1->ID;
+	cin.ignore();
+	cout << "Enter name :"; 
+	getline(cin, s1->name);
+	do {
+		cout << "Enter Score (0 -> 10): "; cin >> s1->score;
+	} while (s1->score < 0 || s1->score>10);
+	if (!st1.empty())
+	{
+		for (int i = 0; i < st1.size(); i++)
+		{
+			s->ID = st1[i]->ID;
+			if (s1->ID == s->ID) 
+			{
+				cout << "Enter ID :";
+				cin >> s1->ID;
+			}
+			else break;
+		}
+	}
+	st1.push_back(s1);
 
 }
 void showStudent()
@@ -54,8 +67,8 @@ void SaveToFile(string path) {
 	f.open(path, ios::out);
 	if (f.fail()) cout << " file does not exist" << endl;
 	else {
-		for (int i = 0; i < st1.size()-1; i++) {
-			f<< st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// write to file
+		for (int i = 0; i < st1.size(); i++) {
+			f<< st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score<<endl ;// write to file
 		}
 	}
 	f.close();
