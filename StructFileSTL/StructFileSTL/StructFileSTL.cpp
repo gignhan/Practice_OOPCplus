@@ -29,7 +29,6 @@ void addStudent(Student *s)
 {
 
 		cout << "Enter ID   :"; cin >> s->ID;
-		//if (checkId(s)) { cout << "Enter ID :"; cin >> s->ID; }
 		cin.ignore();
 		cout << "Enter name :"; 
 		getline(cin, s->name);
@@ -45,14 +44,47 @@ void showStudent()
 		showStudent(st1[i]);
 		
 }
+void display()
+{
+	cout << "ID\t FULL NAME \t\t SCORE" << endl;
+	showStudent();
+}
+void SaveToFile(string path) {
+	fstream f;
+	f.open(path, ios::out);
+	if (f.fail()) cout << " file does not exist" << endl;
+	else {
+		int a;
+		for (int i = 0; i < st1.size(); i++) {
+			a = st1[i]->ID;
+			f << " " << st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// ghi x vao file f
+		}
+	}
+	f.close();
+	cout << " Done ! " << endl;
+}
 void main()
 {
 	Student *st=new Student;
-	addStudent(st);
-	int a; 
-	cout << "enter 1 input :"; cin >> a;
-	if (a == 1) addStudent(st);
-	showStudent();
+	int choose; 
+	cout << "-----------------MENU------------------"<<endl;
+	cout << "\t 1. Input "<<endl;
+	cout << "\t 2. Display" << endl;
+	cout << "\t 3. Save to file " << endl;
+	cout << "\t 4. Load from file " << endl;
+	cout << "\t 0. Exit" << endl;
+	cout << "----------------------------------------"<<endl;
+	cout << " Choose :"; cin >> choose;
+	if (choose == 1)
+	{
+		addStudent(st);
+		display();
+		SaveToFile("Text.txt");
+
+	}
+	else
+		if (choose == 2) display();
+		
 	system("pause");
 
 }
