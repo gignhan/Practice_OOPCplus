@@ -41,9 +41,9 @@ void addStudent(Student *s)
 }
 void showStudent()
 {
-	//for (int i = 0; i< st1.size(); i++)
-		showStudent(st1[1]);
-		showStudent(st1[2]);
+	for (int i = 0; i< st1.size(); i++)
+		showStudent(st1[i]);
+		
 }
 void main()
 {
