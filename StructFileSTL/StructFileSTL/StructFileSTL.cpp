@@ -54,7 +54,6 @@ void SaveToFile(string path) {
 	f.open(path, ios::out);
 	if (f.fail()) cout << " file does not exist" << endl;
 	else {
-		int a;
 		for (int i = 0; i < st1.size(); i++) {
 			f << " " << st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// write to file
 		}
@@ -81,31 +80,34 @@ void LoadFromFile(string path) {
 		cout << "Done! " << endl;
 	}
 }
-void main()
+void Menu()
 {
-	Student *st=new Student;
-	int choose; 
-	cout << "-----------------MENU------------------"<<endl;
-	cout << "\t 1. Input "<<endl;
+	cout << "-----------------MENU------------------" << endl;
+	cout << "\t 1. Input " << endl;
 	cout << "\t 2. Display" << endl;
 	cout << "\t 3. Save to file " << endl;
 	cout << "\t 4. Load from file " << endl;
 	cout << "\t 0. Exit" << endl;
-	cout << "----------------------------------------"<<endl;
-	cout << " Choose :"; cin >> choose;
-	if (choose == 1)
-	{
-		addStudent(st);
-		display();
-		SaveToFile("Text.txt");
-
-
-	}
-	else
-		if (choose == 2) display();
-		else
-			if (choose == 3) LoadFromFile("Text.txt");
+	cout << "----------------------------------------" << endl;
+}
+int main()
+{
+	Student *st=new Student;
+	int choose; 
+	Menu();
+	do {
+		system("cls");
+		Menu();
+		cout << " Choose :"; cin >> choose; 
+		if (choose == 1) addStudent(st);
+		else if (choose == 2) display();
+		else if (choose == 3) SaveToFile("Text.txt");
+		else if (choose == 4) LoadFromFile("Text.txt");
+		else if (choose == 0) return 0;
+		else choose = 5;
+		system("pause");
+	} while (choose != 0);
+	
 	system("pause");
-
 }
 
