@@ -54,8 +54,8 @@ void SaveToFile(string path) {
 	f.open(path, ios::out);
 	if (f.fail()) cout << " file does not exist" << endl;
 	else {
-		for (int i = 0; i < st1.size(); i++) {
-			f << " " << st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// write to file
+		for (int i = 0; i < st1.size()-1; i++) {
+			f<< st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// write to file
 		}
 	}
 	f.close();
@@ -67,14 +67,17 @@ void LoadFromFile(string path) {
 	if (f.fail()) 
 		f << " no open file " << endl;
 	else {
-		string y; int x; float z;
+		string y; int x; float z; 
 		while (!f.eof()) {//eof() tra ve true neu ket thuc file
-			f >> x;
-			cout << x;
-			f >> y;
-			cout << "\t" << y;
-			f >> z;
-			cout << "\t\t" << z << endl;
+			Student *s1 = new Student;
+			f >> x; s1->ID = x;
+			//cout << x;
+			f >> y; s1->name = y;
+			//cout << "\t" << y;
+			f >> z; s1->score = z;
+			//cout << "\t\t" << z << endl;
+			st1.push_back(s1);
+			showStudent();
 		}
 		f.close();
 		cout << "Done! " << endl;
