@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 typedef int *IntPtrType; // khai bao bien con tro 
-void main()
+void main_a()
 {
 	IntPtrType ptr_a, ptr_b, *ptr_c; // khai bao bien con tro ma khong can dung *
 	ptr_a = new int; // cap phat vung nho tren than vung Heap
