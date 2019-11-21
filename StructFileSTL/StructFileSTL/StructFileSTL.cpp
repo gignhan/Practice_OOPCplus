@@ -56,12 +56,30 @@ void SaveToFile(string path) {
 	else {
 		int a;
 		for (int i = 0; i < st1.size(); i++) {
-			a = st1[i]->ID;
-			f << " " << st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// ghi x vao file f
+			f << " " << st1[i]->ID <<" "<< st1[i]->name<<" " <<st1[i]->score ;// write to file
 		}
 	}
 	f.close();
 	cout << " Done ! " << endl;
+}
+void LoadFromFile(string path) {
+	fstream f;
+	f.open(path, ios::in);
+	if (f.fail()) 
+		f << " no open file " << endl;
+	else {
+		string y; int x; float z;
+		while (!f.eof()) {//eof() tra ve true neu ket thuc file
+			f >> x;
+			cout << x;
+			f >> y;
+			cout << "\t" << y;
+			f >> z;
+			cout << "\t\t" << z << endl;
+		}
+		f.close();
+		cout << "Done! " << endl;
+	}
 }
 void main()
 {
@@ -81,10 +99,12 @@ void main()
 		display();
 		SaveToFile("Text.txt");
 
+
 	}
 	else
 		if (choose == 2) display();
-		
+		else
+			if (choose == 3) LoadFromFile("Text.txt");
 	system("pause");
 
 }
