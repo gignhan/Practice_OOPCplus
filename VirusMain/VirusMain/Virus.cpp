@@ -45,8 +45,9 @@ void Virus::LoadADNInformation()
 			f >> s;
 			*c = s;
 			m_dna = c;
-			cout <<*m_dna;
+			cout << *m_dna;
 		}
+		cout << endl;
 		f.close();
 	}
 }
