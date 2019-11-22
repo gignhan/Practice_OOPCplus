@@ -4,6 +4,8 @@
 
 MyPoint::MyPoint()
 {
+	mPosX = 0;
+	mPosY = 0;
 
 }
 MyPoint::MyPoint(int x,int y)
