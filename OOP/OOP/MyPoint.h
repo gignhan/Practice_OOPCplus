@@ -1,9 +1,8 @@
 #pragma once
 class MyPoint
 {
-
-public:
 protected: int mPosX, mPosY;
+public:
 	MyPoint();
 	~MyPoint();
 	MyPoint(int, int);

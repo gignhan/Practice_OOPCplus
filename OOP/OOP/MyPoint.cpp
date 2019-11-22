@@ -36,8 +36,7 @@ int MyPoint::GetY()
 }
 void MyPoint::Dislay()
 {
-	cout << "X : " << mPosX << endl;
-	cout << "Y : " << mPosY << endl;
+	cout << "Point : ( " << mPosX << "," << mPosY << " )" << endl;
 }
 float MyPoint::Distance(MyPoint m) 
 {
