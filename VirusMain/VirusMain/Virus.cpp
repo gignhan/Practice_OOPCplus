@@ -50,13 +50,8 @@ void Virus::LoadADNInformation()
 		f.close();
 	}
 }
-int Virus::ReduceResistance(int)
+int Virus::ReduceResistance(int x)
 {
-	return 0;
+	
+	return m_resistance -x;
 }
-//istream &operator >> (istream &is, Virus & t) {
-//	return is;
-//}
-//istream &operator << (istream &is, Virus & t) {
-//	return is;
-//}

@@ -12,12 +12,11 @@ public:
 	void SetM_resistance(int);
 	void LoadADNInformation();
 	int ReduceResistance(int);
-	//virtual int DoBorn() = 0;
-	//virtual int DoClone() = 0;
-	//virtual void DoDie() = 0;
-	//virtual void  initResistance() = 0;
-	friend istream &operator >> (istream &is, Virus & v);
-	friend ostream &operator << (ostream &os, Virus & v);
+	virtual int DoBorn() = 0;
+	virtual int DoClone() = 0;
+	virtual void DoDie() = 0;
+	virtual void  initResistance() = 0;
+
 
 
 };
