@@ -16,3 +16,21 @@ Virus::Virus(char *x, int y)
 Virus::~Virus()
 {
 }
+
+char Virus::GetM_dna()
+{
+	return *m_dna;
+}
+void Virus::SetM_dna(char *x)
+{
+	this->m_dna = x;
+}
+int Virus::GetM_resistance()
+{
+	return this->m_resistance;
+}
+void Virus::SetM_resistance(int x)
+{
+	this->m_resistance = x;
+}
+
