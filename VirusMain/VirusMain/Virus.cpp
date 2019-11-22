@@ -4,8 +4,8 @@
 
 Virus::Virus()
 {
-	this->m_dna = "GTAX";
-	this->m_resistance = 0;
+	m_dna = "XGTAX";
+	m_resistance = 0;
 }
 Virus::Virus(char *x, int y)
 {
@@ -33,4 +33,30 @@ void Virus::SetM_resistance(int x)
 {
 	this->m_resistance = x;
 }
-
+void Virus::LoadADNInformation()
+{
+	fstream f;
+	f.open("ATGX.bin", ios::in);// open file to read
+	if (f.fail())//file no exists , f.fail() return true , file exists 
+		f << " No open file " << endl;
+	else {
+		char s; char *c = new char();
+		while (!f.eof()) {//eof() tra ve true neu ket thuc file
+			f >> s;
+			*c = s;
+			m_dna = c;
+			cout <<*m_dna;
+		}
+		f.close();
+	}
+}
+int Virus::ReduceResistance(int)
+{
+	return 0;
+}
+//istream &operator >> (istream &is, Virus & t) {
+//	return is;
+//}
+//istream &operator << (istream &is, Virus & t) {
+//	return is;
+//}

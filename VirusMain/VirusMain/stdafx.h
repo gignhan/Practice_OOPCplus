@@ -9,7 +9,10 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include<iostream>
+using namespace std;
 
+#include<fstream>
 
 
 // TODO: reference additional headers your program requires here

@@ -1,7 +1,7 @@
 #pragma once
 class Virus
 {
-protected: char *m_dna; int m_resistance;
+protected: char *m_dna = new char(); int m_resistance;
 public:
 	Virus();
 	Virus(char *, int );
@@ -12,10 +12,10 @@ public:
 	void SetM_resistance(int);
 	void LoadADNInformation();
 	int ReduceResistance(int);
-	virtual int DoBorn() = 0;
-	virtual int DoClone() = 0;
-	virtual void DoDie() = 0;
-	virtual void  initResistance() = 0;
+	//virtual int DoBorn() = 0;
+	//virtual int DoClone() = 0;
+	//virtual void DoDie() = 0;
+	//virtual void  initResistance() = 0;
 	friend istream &operator >> (istream &is, Virus & v);
 	friend ostream &operator << (ostream &os, Virus & v);
 
