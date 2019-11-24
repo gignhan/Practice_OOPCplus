@@ -15,6 +15,8 @@ using namespace std;
 #include<fstream>
 #include <list>
 #include <iterator> 
-
+#include"FluVirus.h"
+#include"Virus.h"
+#include"Patient.h"
 
 // TODO: reference additional headers your program requires here

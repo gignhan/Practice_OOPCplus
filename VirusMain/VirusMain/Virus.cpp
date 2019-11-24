@@ -4,7 +4,8 @@
 
 Virus::Virus()
 {
-	m_dna = "XGTAX";
+	this->m_dna = new char();
+	m_dna = "";
 	m_resistance = 0;
 }
 Virus::Virus(char *x, int y)
@@ -15,6 +16,7 @@ Virus::Virus(char *x, int y)
 
 Virus::~Virus()
 {
+	cout << "Virus is die"<< endl;
 }
 
 char Virus::GetM_dna()
@@ -53,6 +55,9 @@ void Virus::LoadADNInformation()
 }
 int Virus::ReduceResistance(int x)
 {
+	m_resistance -= x;
+	if(m_resistance <= 0) return m_resistance =0;
+	else return m_resistance;
 	
-	return m_resistance -x;
 }
+
