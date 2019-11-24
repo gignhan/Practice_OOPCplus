@@ -46,9 +46,16 @@ void DengueVirus::DoClone()
 }
 void DengueVirus::DoDie()
 {
+	this->m_dna = "";
+	this->m_resistance = 0;
+	for (int i = 0; i < 4; i++)
+		this->m_protein[i] = NULL;
+
 
 }
 void DengueVirus::initResistance()
 {
-
+	if (m_protein[3] == '3') m_resistance = 1+ rand() % 10;
+	if (m_protein[3] == '5') m_resistance = 11 + rand() % 10;
+	if (m_protein[1] == 'E') m_resistance = 21 + rand() % 10;
 }
