@@ -10,9 +10,9 @@ public:
 	~Patient();
 
 	void DoStart();
-	void TakeMedicine();
+	void TakeMedicine(int);
 	void DoDie();
-	void GetState();
+	int GetState();
 
 };
 

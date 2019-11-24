@@ -11,6 +11,7 @@ DengueVirus::DengueVirus()
 
 DengueVirus::~DengueVirus()
 {
+	cout << "Virus Dengue is die" << endl;
 }
 
 void DengueVirus::DoBorn()

@@ -4,6 +4,7 @@
 
 FluVirus::FluVirus()
 {
+	
 	this->m_color = 0;
 }
 
@@ -41,6 +42,7 @@ void FluVirus::DoDie()
 	this->m_dna = "";
 	this->m_resistance = 0;
 	this->m_color = 0;
+
 }
 void FluVirus::initResistance()
 {

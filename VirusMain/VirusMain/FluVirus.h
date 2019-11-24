@@ -14,5 +14,6 @@ public:
 	void DoClone() ;
 	void DoDie() ;
 	void initResistance();
+
 };
 
