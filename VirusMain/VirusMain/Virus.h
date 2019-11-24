@@ -1,7 +1,7 @@
 #pragma once
 class Virus
 {
-protected: char *m_dna = new char(); int m_resistance;
+protected: char *m_dna ; int m_resistance;
 public:
 	Virus();
 	Virus(char *, int );

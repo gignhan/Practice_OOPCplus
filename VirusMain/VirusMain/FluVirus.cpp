@@ -13,6 +13,7 @@ FluVirus::FluVirus(int x)
 }
 FluVirus::~FluVirus()
 {
+	cout << "FluVirus is die" << endl;
 }
 int FluVirus::GetM_color()
 {
@@ -30,18 +31,19 @@ void FluVirus::DoBorn()
 
 void FluVirus::DoClone()
 {
-	list<FluVirus>lf;
-	lf.push_back(*m_dna);
-	lf.push_back(m_resistance);
-	lf.push_back(m_color);
-	for (int i = 0; i < lf.size(); i++)
-		cout << lf[i] << "\t";
+	FluVirus *v = new FluVirus();;
+	v->m_dna = this->m_dna;
+	v->m_resistance = this->m_resistance;
+	v->m_color = this->m_color;
 }
 void FluVirus::DoDie()
 {
-
+	this->m_dna = "";
+	this->m_resistance = 0;
+	this->m_color = 0;
 }
 void FluVirus::initResistance()
 {
-
+	if (m_color == 0) m_resistance = rand() % 20 + 10;
+	else m_resistance = rand() % 15 + 10;
 }
