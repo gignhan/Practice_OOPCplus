@@ -26,7 +26,7 @@ void FluVirus::SetM_color(int x)
 void FluVirus::DoBorn()
 {
 	LoadADNInformation();
-	m_color = rand() % 2 +1 ;
+	m_color = 0 + rand() % 2 ;
 }
 
 void FluVirus::DoClone()
@@ -44,6 +44,6 @@ void FluVirus::DoDie()
 }
 void FluVirus::initResistance()
 {
-	if (m_color == 0) m_resistance = rand() % 20 + 10;
-	else m_resistance = rand() % 15 + 10;
+	if (m_color == 0) m_resistance =10 + rand() % 11;
+	else m_resistance = 15+ rand() % 6;
 }
