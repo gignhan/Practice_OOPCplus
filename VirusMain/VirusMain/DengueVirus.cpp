@@ -54,9 +54,10 @@ void DengueVirus::DoDie()
 
 
 }
-void DengueVirus::initResistance()
+int DengueVirus::initResistance()
 {
 	if (m_protein[3] == '3') m_resistance = 1+ rand() % 10;
 	if (m_protein[3] == '5') m_resistance = 11 + rand() % 10;
 	if (m_protein[1] == 'E') m_resistance = 21 + rand() % 10;
+	return this->m_resistance;
 }

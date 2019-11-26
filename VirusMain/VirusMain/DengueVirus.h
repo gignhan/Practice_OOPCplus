@@ -9,6 +9,6 @@ public:
 	void DoBorn();
 	Virus** DoClone();
 	void DoDie();
-	void initResistance();
+	int initResistance();
 };
 

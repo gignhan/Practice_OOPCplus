@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "Virus.h"
 #include"FluVirus.h"
+#include"Patient.h"
 int main()
 {
 	//Virus v;
@@ -14,8 +15,9 @@ int main()
 	//Virus *v = new FluVirus();
 	//v->DoBorn();
 	Patient p;
-	char t;
+	int t;
 	p.DoStart();
+	//cout << p.GetState() << endl; // check function GetState()
 	while (p.GetState() == 1)
 	{
 		cout << "Take Medicine (0 = NO, 1 = YES)"; cin >> t;
@@ -23,10 +25,11 @@ int main()
 		{
 			int min = 1;
 			int max = 60;
-			int medicine_resistance = min + (rand() % (int)(max - min + 1));
+			int medicine_resistance = min + (rand() % (int)(max - min + 1)); cout << medicine_resistance;
 				p.TakeMedicine(medicine_resistance);
 
 		}
+
 	}
 	system("pause");
     return 0;

@@ -48,8 +48,9 @@ void FluVirus::DoDie()
 	this->m_color = 0;
 
 }
-void FluVirus::initResistance()
+int FluVirus::initResistance()
 {
 	if (m_color == 0) m_resistance =10 + rand() % 11;
 	else m_resistance = 15+ rand() % 6;
+	return m_resistance;
 }

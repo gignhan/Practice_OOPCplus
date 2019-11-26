@@ -15,7 +15,7 @@ public:
 	virtual void DoBorn() = 0;
 	virtual Virus **DoClone() = 0;
 	virtual void DoDie() = 0;
-	virtual void  initResistance() = 0;
+	virtual int  initResistance() = 0;
 
 
 

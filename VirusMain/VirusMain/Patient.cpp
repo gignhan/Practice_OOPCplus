@@ -4,8 +4,8 @@
 
 Patient::Patient()
 {
-	m_resistance = 1000 + rand()%8001;
-	m_state = 1;
+	this->m_resistance = 1000 + rand() % 8001;
+	this->m_state = 1;
 }
 
 
@@ -37,14 +37,9 @@ void Patient::TakeMedicine(int x)
 {
 	list<Virus*>::iterator it;
 	for (it = m_viruslist.begin(); it != m_viruslist.end(); it++) {
-		cout << *it << " ";
-	}
-	for (it = m_viruslist.begin(); it != m_viruslist.end(); it++) {
 		Virus *v;
 		v = *it;
 		v->ReduceResistance(x);
-		m_viruslist.push_back(v);
-		cout << *it << " ";
 	}
 
 }
@@ -55,5 +50,5 @@ void Patient::DoDie()
 }
 int Patient::GetState()
 {
-	return m_state;
+	return this->m_state;
 }
