@@ -21,12 +21,14 @@ void Patient::DoStart()
 		if (k == 1) {
 			Virus *v = new FluVirus();
 			v->DoBorn();
+			v->SetM_resistance(v->initResistance());
 			m_viruslist.push_back(v);
 		}
 		else
 		{
 			Virus *v = new DengueVirus();
 			v->DoBorn();
+			v->SetM_resistance(v->initResistance());
 			m_viruslist.push_back(v);
 		}
 		
@@ -36,10 +38,23 @@ void Patient::DoStart()
 void Patient::TakeMedicine(int x)
 {
 	list<Virus*>::iterator it;
-	for (it = m_viruslist.begin(); it != m_viruslist.end(); it++) {
-		Virus *v;
-		v = *it;
-		v->ReduceResistance(x);
+	for (it = m_viruslist.begin(); it != m_viruslist.end();) 
+	{
+		if (m_resistance == 0) DoDie();
+		else
+		{
+			if ((*it)->GetM_resistance() <= x)
+			{
+				m_viruslist.erase(it);
+				x -= (*it)->GetM_resistance();
+				it++;
+			}
+			else
+			{
+				m_viruslist.push_back(*(*it)->DoClone());
+			}
+		}
+
 	}
 
 }

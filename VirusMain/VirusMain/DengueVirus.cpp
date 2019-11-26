@@ -43,6 +43,7 @@ Virus** DengueVirus::DoClone()
 	Virus *v = new DengueVirus();
 	v->SetM_dna(this->m_dna);
 	v->SetM_resistance(this->m_resistance);
+	v->initResistance();
 	return &v;
 }
 void DengueVirus::DoDie()
