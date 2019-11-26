@@ -11,7 +11,7 @@ public:
 	int GetM_color();
 	void SetM_color(int);
 	void DoBorn() ;
-	void DoClone() ;
+	Virus **DoClone() ;
 	void DoDie() ;
 	void initResistance();
 

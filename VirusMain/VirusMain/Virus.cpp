@@ -10,6 +10,7 @@ Virus::Virus()
 }
 Virus::Virus(char *x, int y)
 {
+	this->m_dna = new char();
 	this->m_dna = x;
 	this->m_resistance = y;
 }
@@ -43,7 +44,8 @@ void Virus::LoadADNInformation()
 		f << " No open file " << endl;
 	else {
 		char s; char *c = new char();
-		while (!f.eof()) {//eof() tra ve true neu ket thuc file
+		while (!f.eof()) 
+		{
 			f >> s;
 			*c = s;
 			m_dna = c;

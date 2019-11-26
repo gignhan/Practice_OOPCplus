@@ -30,13 +30,15 @@ void FluVirus::DoBorn()
 	m_color = 0 + rand() % 2 ;
 }
 
-void FluVirus::DoClone()
+Virus ** FluVirus::DoClone()
 {
-	FluVirus *v = new FluVirus();;
-	v->m_dna = this->m_dna;
-	v->m_resistance = this->m_resistance;
-	v->m_color = this->m_color;
+	Virus *v = new FluVirus();
+	v->SetM_dna(m_dna);
+	v->SetM_resistance(m_resistance);
+	return &v;
 }
+
+
 void FluVirus::DoDie()
 {
 	this->m_dna = "";

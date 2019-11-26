@@ -13,7 +13,7 @@ public:
 	void LoadADNInformation();
 	int ReduceResistance(int);
 	virtual void DoBorn() = 0;
-	virtual void DoClone() = 0;
+	virtual Virus **DoClone() = 0;
 	virtual void DoDie() = 0;
 	virtual void  initResistance() = 0;
 
