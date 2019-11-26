@@ -5,6 +5,7 @@ protected: char *m_dna ; int m_resistance;
 public:
 	Virus();
 	Virus(char *, int );
+	Virus(const Virus &);
 	~Virus();
 	char GetM_dna();
 	void SetM_dna(char *);

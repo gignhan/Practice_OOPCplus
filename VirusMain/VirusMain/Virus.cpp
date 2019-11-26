@@ -15,6 +15,12 @@ Virus::Virus(char *x, int y)
 	this->m_resistance = y;
 }
 
+Virus::Virus(const Virus &v)
+{
+	this->m_dna = v.m_dna;
+	m_resistance = v.m_resistance;
+}
+
 Virus::~Virus()
 {
 	cout << "Virus is die"<< endl;

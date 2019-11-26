@@ -8,6 +8,14 @@ DengueVirus::DengueVirus()
 		m_protein[i] = ' ';
 }
 
+DengueVirus::DengueVirus(const DengueVirus & d)
+{
+	SetM_dna(d.m_dna);
+	SetM_resistance(d.m_resistance);
+	for (int i = 0; i < 4; i++)
+		m_protein[i] = d.m_protein[i];
+}
+
 
 DengueVirus::~DengueVirus()
 {

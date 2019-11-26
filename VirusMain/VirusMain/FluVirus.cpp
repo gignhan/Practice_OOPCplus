@@ -12,6 +12,12 @@ FluVirus::FluVirus(int x)
 {
 	this->m_color = x;
 }
+FluVirus::FluVirus(const FluVirus & f)
+{
+	SetM_dna(f.m_dna);
+	SetM_resistance( f.m_resistance);
+	m_color = f.m_color;
+}
 FluVirus::~FluVirus()
 {
 	cout << "FluVirus is die" << endl;
