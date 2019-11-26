@@ -7,7 +7,7 @@ public:
 	DengueVirus();
 	~DengueVirus();
 	void DoBorn();
-	void DoClone();
+	Virus** DoClone();
 	void DoDie();
 	void initResistance();
 };

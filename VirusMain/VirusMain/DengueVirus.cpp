@@ -35,15 +35,12 @@ void DengueVirus::DoBorn()
 		m_protein[1] = { 'E' };
 	}
 }
-void DengueVirus::DoClone()
+Virus** DengueVirus::DoClone()
 {
-	DengueVirus *v = new DengueVirus();
-	v->m_dna = this->m_dna;
-	v->m_resistance = this->m_resistance;
-	for (int i = 0; i < 4; i++)
-	{
-		v->m_protein[i] = m_protein[i];
-	}
+	Virus *v = new DengueVirus();
+	v->SetM_dna(this->m_dna);
+	v->SetM_resistance(this->m_resistance);
+	return &v;
 }
 void DengueVirus::DoDie()
 {
