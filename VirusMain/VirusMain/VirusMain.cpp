@@ -15,6 +15,7 @@ int main()
 	//v->DoBorn();
 	Patient p;
 	char t;
+	p.DoStart();
 	while (p.GetState() == 1)
 	{
 		cout << "Take Medicine (0 = NO, 1 = YES)"; cin >> t;

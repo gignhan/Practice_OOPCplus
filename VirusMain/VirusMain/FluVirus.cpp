@@ -28,6 +28,8 @@ void FluVirus::DoBorn()
 {
 	LoadADNInformation();
 	m_color = 0 + rand() % 2 ;
+	if (m_color == 1) cout << "m_color : red" << endl;
+	else cout << "m_color : blue" << endl;
 }
 
 Virus ** FluVirus::DoClone()
