@@ -41,9 +41,7 @@ void FluVirus::DoBorn()
 Virus ** FluVirus::DoClone()
 {
 	Virus *v = new FluVirus();
-	v->SetM_dna(m_dna);
-	v->SetM_resistance(m_resistance);
-	v->initResistance();
+	v = this;
 	return &v;
 }
 
