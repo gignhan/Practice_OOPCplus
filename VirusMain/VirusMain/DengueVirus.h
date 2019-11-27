@@ -5,6 +5,7 @@ class DengueVirus :  public Virus
 protected: char m_protein[4];
 public:
 	DengueVirus();
+	DengueVirus(const DengueVirus &);
 	~DengueVirus();
 	void DoBorn();
 	Virus** DoClone();

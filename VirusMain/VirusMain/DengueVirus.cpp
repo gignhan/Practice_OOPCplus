@@ -28,18 +28,21 @@ void DengueVirus::DoBorn()
 	int x = 1 + rand() % 3;
 	if (x == 1)
 	{
+		cout << "m_protein : ";
 		m_protein[1] = {'N'};
 		m_protein[2] = { 'S' };
 		m_protein[3] = { '3' };
 	}
 	if (x == 2)
-	{
+	{	
+		cout << "m_protein : ";
 		m_protein[1] = { 'N' };
 		m_protein[2] = { 'S' };
 		m_protein[3] = { '5' };
 	}
 	if (x == 3)
 	{
+		cout << "m_protein : ";
 		m_protein[1] = { 'E' };
 	}
 	for (int i = 0; i < 4; i++)

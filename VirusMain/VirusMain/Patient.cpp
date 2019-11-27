@@ -22,6 +22,7 @@ void Patient::DoStart()
 			Virus *v = new FluVirus();
 			v->DoBorn();
 			v->SetM_resistance(v->initResistance());
+			cout << "Resistance of Virus: "<<v->GetM_resistance()<<endl;
 			m_viruslist.push_back(v);
 		}
 		else
@@ -29,34 +30,36 @@ void Patient::DoStart()
 			Virus *v = new DengueVirus();
 			v->DoBorn();
 			v->SetM_resistance(v->initResistance());
+			cout << "Resistance of Virus: " << v->GetM_resistance()<<endl;
 			m_viruslist.push_back(v);
 		}
 		
 	}
-	m_state = 1;
+	this->m_state = 1;
 }
 void Patient::TakeMedicine(int x)
 {
 	list<Virus*>::iterator it;
-	for (it = m_viruslist.begin(); it != m_viruslist.end();) 
+	for ( it = m_viruslist.begin(); it != m_viruslist.end();) 
 	{
-		if (m_resistance == 0) DoDie();
+		//int a = (*it)->GetM_resistance();
+		//system("pause");
+		if ((*it)->ReduceResistance(x)==0)
+		{
+			it = m_viruslist.erase(it);
+		}
 		else
 		{
-			if ((*it)->GetM_resistance() <= x)
-			{
-				m_viruslist.erase(it);
-				x -= (*it)->GetM_resistance();
-				it++;
-			}
-			else
-			{
-				m_viruslist.push_back(*(*it)->DoClone());
-			}
+			if((*it)->ReduceResistance(x)>0) m_viruslist.push_back(*(*it)->DoClone());
+			it++;
 		}
-
 	}
 
+	if (m_viruslist.empty())
+	{
+		cout << "Patient Alive" << endl;
+		m_state = 0;
+	}
 }
 void Patient::DoDie()
 {

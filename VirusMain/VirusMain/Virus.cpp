@@ -23,6 +23,7 @@ Virus::Virus(const Virus &v)
 
 Virus::~Virus()
 {
+
 	cout << "Virus is die"<< endl;
 }
 
@@ -64,7 +65,7 @@ void Virus::LoadADNInformation()
 int Virus::ReduceResistance(int x)
 {
 	m_resistance -= x;
-	if(m_resistance <= 0) return m_resistance =0;
+	if(m_resistance <= 0) return 0;
 	else return m_resistance;
 	
 }
