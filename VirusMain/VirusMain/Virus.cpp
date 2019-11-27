@@ -4,13 +4,12 @@
 
 Virus::Virus()
 {
-	this->m_dna = new char();
 	m_dna = "";
 	m_resistance = 0;
 }
 Virus::Virus(char *x, int y)
 {
-	this->m_dna = new char();
+
 	this->m_dna = x;
 	this->m_resistance = y;
 }
