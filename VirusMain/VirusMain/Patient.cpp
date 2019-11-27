@@ -46,7 +46,9 @@ void Patient::TakeMedicine(int x)
 		//system("pause");
 		if ((*it)->ReduceResistance(x)==0)
 		{
+			delete (*it);
 			it = m_viruslist.erase(it);
+			
 		}
 		else
 		{

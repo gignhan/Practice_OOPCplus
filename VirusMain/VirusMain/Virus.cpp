@@ -24,7 +24,7 @@ Virus::Virus(const Virus &v)
 Virus::~Virus()
 {
 
-	cout << "Virus is die"<< endl;
+	//cout << "Virus is die"<< endl;
 }
 
 char Virus::GetM_dna()
@@ -58,6 +58,7 @@ void Virus::LoadADNInformation()
 			m_dna = c;
 			cout << *m_dna;
 		}
+		delete c;
 		cout << endl;
 		f.close();
 	}
