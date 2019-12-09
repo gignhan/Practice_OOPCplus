@@ -1,0 +1,8 @@
+int iVar = 10;
+int *p1 = &iVar;
+int **p2 = &p1;
+
+What are the result?
+1. *p1 == 10
+2. *p2 == 0x200
+3. *(*p2) == 10

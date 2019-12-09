@@ -1,0 +1,7 @@
+Why should we use delete ?
+ - Because we free the memory to allocate for the next article, not full of memory.
+When we use delete?
+ -when we don't use it anymore we should free it
+Difference between delete and delete[]. Write a demo?
+ - delete : release the cursor
+ - delete[] : release the array

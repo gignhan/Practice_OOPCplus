@@ -1,0 +1,19 @@
+short a[] = {5, 10, 15, 20, 25, 30}
+short *p = a;
+ p : 0x00affb78
+ a : 0x00affb84
+
+What are the result?
+a = 0x00affb78
+p + 1 = dia chi cua a[1] = 10
+a++; a =?
+&a = 0x00affb78 
+(*p) + 1 = 6
+p++; p = dia chi cua a[1]=10
+*a = 5
+*(p+1) = 10
+p = 0x00affb84
+&p + 1 = ?
+&p = 0x00affb78 
+&a + 1 = ?
+*p = 5
